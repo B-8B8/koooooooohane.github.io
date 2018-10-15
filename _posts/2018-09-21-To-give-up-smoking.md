@@ -30,7 +30,8 @@ tags: 生活 随笔
   var date1 = new Date("2018-09-21 00:00:00"); //开始时间
   var time = self.setInterval("clock()", 1000);
   function clock() {
-    var date2 = new Date(); //结束时间
+    //var date2 = new Date(); //结束时间
+    var date2 = new Date("2018-10-13 23:00:00"); //结束时间
     var date3 = date2.getTime() - date1.getTime(); //时间差的毫秒数
     //计算出相差天数
     var days = Math.floor(date3 / (24 * 3600 * 1000));
@@ -45,7 +46,7 @@ tags: 生活 随笔
     var seconds = Math.round(leave3 / 1000);
     date.innerHTML = date1 + "<br>" +
       date2 + "<br>" +
-      "已戒烟： " + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
+      "已戒烟(失败)： " + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
   }
 </script>
 
