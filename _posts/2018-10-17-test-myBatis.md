@@ -26,7 +26,7 @@ INSERT INTO usertable (userName) VALUES ('李倩');
 ```
 
 ## 2.创建项目和包
-#### mybatis_exercise(项目)
+### mybatis_exercise(项目)
 * src [default]
   * com.ahchentong.entity [package]
     * User.java [实体]
@@ -42,8 +42,8 @@ INSERT INTO usertable (userName) VALUES ('李倩');
   * mybatis-config.xml [mybatis主配置]
   * db.properties [外部资源文件 k-v键值对]
 
-#### 3.实操
-##### 3-1 User.java [实体]
+## 3.实操
+### 3-1 User.java [实体]
 
 ```
 package com.ahchentong.entity;
@@ -88,7 +88,7 @@ public class User {
 
 ```
 
-##### 3-2 Dept.java [实体]
+### 3-2 Dept.java [实体]
 
 ```
 package com.ahchentong.entity;
@@ -133,8 +133,8 @@ public class Dept {
 
 ```
 
-##### 3-3 导包、导入DTD文件
-##### 3-4 log4j.xml [日志配置]
+### 3-3 导包、导入DTD文件
+### 3-4 log4j.xml [日志配置]
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -157,7 +157,7 @@ public class Dept {
 
 ```
 
-##### 3-5 db.properties [外部资源文件 k-v键值对]
+### 3-5 db.properties [外部资源文件 k-v键值对]
 
 ```
 jdbc.user=root
@@ -167,7 +167,7 @@ jdbc.jdbcUrl=jdbc:mysql://127.0.0.1:3306/mybatis
 
 ```
 
-##### 3-6 mybatis-config.xml [mybatis主配置]
+### 3-6 mybatis-config.xml [mybatis主配置]
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -226,14 +226,14 @@ jdbc.jdbcUrl=jdbc:mysql://127.0.0.1:3306/mybatis
 
 ```
 
-##### 3-7 创建UserMapper.java [接口]
-##### 3-8 创建UserMapper.xml [绑定]
-##### 3-9 创建DeptMapper.java [接口]
-##### 3-10 创建DeptMapper.xml [绑定]
+### 3-7 创建UserMapper.java [接口]
+### 3-8 创建UserMapper.xml [绑定]
+### 3-9 创建DeptMapper.java [接口]
+### 3-10 创建DeptMapper.xml [绑定]
 
-#### 4.测试
-##### 4-1 一把钥匙、一把锁(单查询)
-###### 4-1.1 UserMapper.java
+## 4.测试
+### 4-1 一把钥匙、一把锁(单查询)
+#### 4-1.1 UserMapper.java
 
 ```
 package com.ahchentong.mapper;
@@ -247,7 +247,7 @@ public interface UserMapper {
 
 ```
 
-###### 4-1.2 UserMapper.xml
+#### 4-1.2 UserMapper.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -261,7 +261,7 @@ public interface UserMapper {
 
 ```
 
-###### 4-1.3 DeptMapper.java
+#### 4-1.3 DeptMapper.java
 
 ```
 package com.ahchentong.mapper;
@@ -275,7 +275,7 @@ public interface DeptMapper {
 
 ```
 
-###### 4-1.4 DeptMapper.xml
+#### 4-1.4 DeptMapper.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -289,7 +289,7 @@ public interface DeptMapper {
 
 ```
 
-###### 4-1.5 One_key_one_lock.java
+#### 4-1.5 One_key_one_lock.java
 
 ```
 package com.ahchentong.test;
@@ -341,8 +341,8 @@ public class One_key_one_lock {
 
 ```
 
-##### 4-2 通过User的id找到自己以及部门 [1.连接查询]
-###### 4-2.1 UserMapper.java
+### 4-2 通过User的id找到自己以及部门 [1.连接查询]
+#### 4-2.1 UserMapper.java
 
 > 注意：通过User的id找到自己以及部门，需要先将Dept加入到User的参数
 
@@ -410,7 +410,7 @@ public interface UserMapper {
 
 ```
 
-###### 4-2.2 UserMapper.xml [association] [与分段查询不同之处在于配置文件]
+#### 4-2.2 UserMapper.xml [association] [与分段查询不同之处在于配置文件]
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -434,7 +434,7 @@ public interface UserMapper {
 
 ```
 
-###### 4-2.3 DeptMapper.java
+#### 4-2.3 DeptMapper.java
 
 ```
 package com.ahchentong.mapper;
@@ -447,7 +447,7 @@ public interface DeptMapper {
 
 ```
 
-###### 4-2.4 DeptMapper.xml
+#### 4-2.4 DeptMapper.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -460,7 +460,7 @@ public interface DeptMapper {
 
 ```
 
-###### 4-2.5 DeptAndUserByUserId.java
+#### 4-2.5 DeptAndUserByUserId.java
 
 ```
 package com.ahchentong.test;
@@ -502,9 +502,9 @@ public class DeptAndUserByUserId{
 
 ```
 
-##### 4-3 通过User的id找到自己以及部门 [2.分段查询]
-###### 4-3.1 UserMapper.java [同 4-2]
-###### 4-3.2 UserMapper.xml
+### 4-3 通过User的id找到自己以及部门 [2.分段查询]
+#### 4-3.1 UserMapper.java [同 4-2]
+#### 4-3.2 UserMapper.xml
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -524,6 +524,6 @@ public class DeptAndUserByUserId{
 
 ```
 
-###### 4-3.3 DeptMapper.java [同 4-2] [getDeptById方法必须要存在]
-###### 4-3.4 DeptMapper.xml [同 4-2] [getDeptById并且要绑定]
-###### 4-3.5 DeptAndUserByUserId.java[同 4-2]
+#### 4-3.3 DeptMapper.java [同 4-2] [getDeptById方法必须要存在]
+#### 4-3.4 DeptMapper.xml [同 4-2] [getDeptById并且要绑定]
+#### 4-3.5 DeptAndUserByUserId.java[同 4-2]
