@@ -527,3 +527,11 @@ public class DeptAndUserByUserId{
 #### 4-3.3 DeptMapper.java [同 4-2] [getDeptById方法必须要存在]
 #### 4-3.4 DeptMapper.xml [同 4-2] [getDeptById并且要绑定]
 #### 4-3.5 DeptAndUserByUserId.java[同 4-2]
+
+
+### 4-3
+#### 4-3.1 UserMapper.java
+#### 4-3.2 UserMapper.xml
+#### 4-3.3 DeptMapper.java
+#### 4-3.4 DeptMapper.xml
+#### 4-3.5
